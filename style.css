@@ -18,11 +18,12 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     max-width: 500px; /* จำกัดความกว้างสำหรับหน้าจอใหญ่ */
     width: 90%; /* ทำให้ยืดหยุ่นบนมือถือ */
-    text-align: center;
+    /* text-align: center; */ /* เอาออก ให้ header/form จัดการเอง */
     margin: auto; /* จัดกึ่งกลางเมื่อหน้าจอกว้าง */
 }
 
 header {
+    text-align: center; /* ทำให้ header อยู่กลาง */
     margin-bottom: 25px;
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;
@@ -44,6 +45,7 @@ h2 {
      color: #333;
     margin-bottom: 20px;
      font-size: 1.5em;
+     text-align: center; /* จัดกลาง */
 }
 
 h3 {
@@ -51,11 +53,13 @@ h3 {
     margin-top: 25px;
     margin-bottom: 15px;
      font-size: 1.3em;
+     text-align: center; /* จัดกลาง */
 }
 h4 {
     color: #444;
     margin-bottom: 10px;
     font-size: 1.1em;
+    text-align: center; /* จัดกลาง */
 }
 
 p {
@@ -64,8 +68,27 @@ p {
     font-size: 1em;
 }
 
+/* Added Style for Instructions */
+.quiz-instructions {
+    text-align: center;
+    margin-bottom: 25px; /* Add space below instructions */
+    padding: 10px 15px; /* ปรับ padding */
+    background-color: #e7f3fe; /* สีฟ้าอ่อน */
+    border-radius: 5px;
+    border-left: 5px solid #2196F3; /* สีฟ้า */
+    font-size: 0.95em;
+    color: #333;
+}
+.quiz-instructions strong {
+    color: #1976D2; /* สีฟ้าเข้ม */
+}
+
 
 /* Question Styling */
+#quiz-form {
+    text-align: center; /* ทำให้ปุ่ม submit อยู่กลาง */
+}
+
 .question-block {
     margin-bottom: 25px;
     text-align: left;
@@ -102,6 +125,25 @@ p {
     accent-color: #4CAF50; /* เปลี่ยนสีเมื่อเลือก (อาจปรับสีตามธีม) */
 }
 
+/* Styling for Date Input */
+input[type="date"],
+input[type="text"][id="q21_dob"] /* Style text input for date specifically */
+ {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: inherit; /* Use the body's font */
+    margin-top: 5px;
+    width: calc(100% - 22px); /* Adjust width */
+    max-width: 250px; /* Limit max width */
+    box-sizing: border-box;
+    display: block; /* Make it block level */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+}
+
+
 /* Button Styling */
 button, .line-button {
     display: inline-block;
@@ -115,6 +157,8 @@ button, .line-button {
     transition: background-color 0.3s ease;
     text-decoration: none; /* สำหรับ line-button */
     margin-top: 15px;
+    margin-left: 5px; /* Add some space between buttons */
+    margin-right: 5px;
 }
 
 button:hover, .line-button:hover {
@@ -122,7 +166,8 @@ button:hover, .line-button:hover {
 }
 
 #submit-btn {
-     width: 100%; /* ทำให้ปุ่มส่งกว้างเต็ม */
+     width: 80%; /* ทำให้ปุ่มส่งไม่กว้างเต็ม 100% */
+     max-width: 300px; /* จำกัดความกว้างสูงสุด */
      margin-top: 20px;
 }
 
@@ -142,6 +187,10 @@ button:hover, .line-button:hover {
 }
 
 /* Result Styling */
+#result-container {
+    text-align: center; /* Center content within results */
+}
+
 .hidden {
     display: none;
 }
@@ -152,9 +201,14 @@ button:hover, .line-button:hover {
     margin: 20px auto;
 }
 
+#score-percentage {
+    margin-bottom: 20px; /* Add space below percentages */
+}
+
 #score-percentage p {
     font-size: 1em;
     margin: 5px 0;
+    text-align: center; /* Center percentages */
 }
 
 #dominant-element {
@@ -168,7 +222,7 @@ button:hover, .line-button:hover {
     background-color: #e9f5e9; /* พื้นหลังสีเขียวอ่อน */
     border-radius: 8px;
     border: 1px solid #c8e6c9;
-    text-align: left;
+    /* text-align: left; */ /* No text to align anymore */
 }
 #element-image {
     display: block;
@@ -177,33 +231,8 @@ button:hover, .line-button:hover {
     margin: 15px auto; /* จัดกึ่งกลาง */
     border-radius: 5px;
 }
-#element-advice {
-    margin-top: 10px;
-    color: #333;
-    white-space: pre-wrap; /* ให้แสดงผลขึ้นบรรทัดใหม่ตามที่ป้อน */
-}
+/* #element-advice is removed */
 
-
-#consultation {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-/* Responsive adjustments if needed */
-@media (max-width: 600px) {
-    .quiz-container {
-        width: 95%;
-        padding: 15px 20px;
-    }
-    h1 { font-size: 1.6em; }
-    h2 { font-size: 1.4em; }
-    h3 { font-size: 1.2em; }
-    .question-block label { font-size: 0.95em; }
-     button, .line-button { padding: 10px 20px; font-size: 1em; }
-}
-
-/* ... (CSS เดิมทั้งหมด) ... */
 
 /* Styling for Feedback Section */
 #feedback-section {
@@ -212,7 +241,7 @@ button:hover, .line-button:hover {
     background-color: #f0f0f0; /* Slightly different background */
     border-radius: 8px;
     border: 1px solid #dcdcdc;
-    text-align: left; /* Align text left */
+    /* text-align: left; */ /* Remove for centering content */
 }
 
 #feedback-section h4 {
@@ -259,17 +288,11 @@ button:hover, .line-button:hover {
     border-color: #4cae4c;
 }
 
-/* Styling for Date Input */
-input[type="date"] {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-    font-family: inherit; /* Use the body's font */
-    margin-top: 5px;
-    width: calc(100% - 22px); /* Adjust width */
-    max-width: 250px; /* Limit max width */
-    box-sizing: border-box;
+
+#consultation {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
 }
 
 /* Error Message Style */
@@ -285,9 +308,19 @@ input[type="date"] {
     margin-top: 15px;
     font-style: italic;
     color: #555;
+    text-align: center; /* Center message */
 }
 
-/* Hide helper elements initially */
-.hidden {
-    display: none;
+
+/* Responsive adjustments if needed */
+@media (max-width: 600px) {
+    .quiz-container {
+        width: 95%;
+        padding: 15px 20px;
+    }
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.2em; }
+    .question-block label { font-size: 0.95em; }
+     button, .line-button { padding: 10px 20px; font-size: 1em; }
 }
