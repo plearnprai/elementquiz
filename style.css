@@ -1,0 +1,293 @@
+/* General Styling */
+body {
+    font-family: 'Sarabun', sans-serif; /* หรือฟอนต์ไทยอื่น ๆ ที่ต้องการ */
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* จัดชิดด้านบน */
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* จำกัดความกว้างสำหรับหน้าจอใหญ่ */
+    width: 90%; /* ทำให้ยืดหยุ่นบนมือถือ */
+    text-align: center;
+    margin: auto; /* จัดกึ่งกลางเมื่อหน้าจอกว้าง */
+}
+
+header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.logo {
+    max-width: 150px; /* ปรับขนาดโลโก้ตามต้องการ */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #333;
+    margin: 5px 0;
+    font-size: 1.8em;
+}
+
+h2 {
+     color: #333;
+    margin-bottom: 20px;
+     font-size: 1.5em;
+}
+
+h3 {
+    color: #555;
+    margin-top: 25px;
+    margin-bottom: 15px;
+     font-size: 1.3em;
+}
+h4 {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+p {
+    color: #555;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+
+/* Question Styling */
+.question-block {
+    margin-bottom: 25px;
+    text-align: left;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.question-block p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.1em; /* เพิ่มขนาดฟอนต์คำถาม */
+}
+
+.question-block label {
+    display: block; /* ให้แต่ละตัวเลือกขึ้นบรรทัดใหม่ */
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1em; /* เพิ่มขนาดฟอนต์ตัวเลือก */
+    color: #555;
+    position: relative;
+    padding-left: 30px; /* เว้นที่สำหรับ radio/checkbox */
+}
+
+.question-block input[type="radio"],
+.question-block input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+    position: absolute; /* จัดตำแหน่ง */
+    left: 0;
+    top: 2px;
+    accent-color: #4CAF50; /* เปลี่ยนสีเมื่อเลือก (อาจปรับสีตามธีม) */
+}
+
+/* Button Styling */
+button, .line-button {
+    display: inline-block;
+    background-color: #5cb85c; /* สีเขียว */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* สำหรับ line-button */
+    margin-top: 15px;
+}
+
+button:hover, .line-button:hover {
+    background-color: #4cae4c; /* สีเขียวเข้มขึ้น */
+}
+
+#submit-btn {
+     width: 100%; /* ทำให้ปุ่มส่งกว้างเต็ม */
+     margin-top: 20px;
+}
+
+#restart-btn {
+    background-color: #f0ad4e; /* สีส้ม */
+}
+#restart-btn:hover {
+    background-color: #ec971f;
+}
+
+.line-button {
+    background-color: #00B900; /* สีเขียว LINE */
+    margin-top: 5px;
+}
+.line-button:hover {
+    background-color: #00a300;
+}
+
+/* Result Styling */
+.hidden {
+    display: none;
+}
+
+.chart-container {
+    width: 80%; /* ปรับขนาด chart */
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+#score-percentage p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+#dominant-element {
+    font-weight: bold;
+    color: #4CAF50; /* หรือสีตามธีม */
+}
+
+#recommendation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9f5e9; /* พื้นหลังสีเขียวอ่อน */
+    border-radius: 8px;
+    border: 1px solid #c8e6c9;
+    text-align: left;
+}
+#element-image {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: 15px auto; /* จัดกึ่งกลาง */
+    border-radius: 5px;
+}
+#element-advice {
+    margin-top: 10px;
+    color: #333;
+    white-space: pre-wrap; /* ให้แสดงผลขึ้นบรรทัดใหม่ตามที่ป้อน */
+}
+
+
+#consultation {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 600px) {
+    .quiz-container {
+        width: 95%;
+        padding: 15px 20px;
+    }
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.2em; }
+    .question-block label { font-size: 0.95em; }
+     button, .line-button { padding: 10px 20px; font-size: 1em; }
+}
+
+/* ... (CSS เดิมทั้งหมด) ... */
+
+/* Styling for Feedback Section */
+#feedback-section {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f0f0f0; /* Slightly different background */
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    text-align: left; /* Align text left */
+}
+
+#feedback-section h4 {
+    text-align: center; /* Center heading */
+    margin-bottom: 10px;
+}
+#feedback-section > p { /* Center the scale description */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.feedback-options {
+    display: flex; /* Arrange options horizontally */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center; /* Center the options */
+    gap: 5px 10px; /* Spacing between options */
+    margin-bottom: 10px;
+}
+
+.feedback-options label {
+    display: inline-block; /* Keep label and radio together */
+    margin-bottom: 5px;
+    padding: 5px 8px; /* Add some padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+    background-color: #fff;
+    transition: background-color 0.2s, border-color 0.2s;
+    min-width: 30px; /* Ensure minimum width */
+    text-align: center;
+}
+
+.feedback-options input[type="radio"] {
+    display: none; /* Hide the actual radio button */
+}
+
+/* Style for selected feedback option */
+.feedback-options input[type="radio"]:checked + label {
+    background-color: #5cb85c; /* Green background */
+    color: white;
+    border-color: #4cae4c;
+}
+
+/* Styling for Date Input */
+input[type="date"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: inherit; /* Use the body's font */
+    margin-top: 5px;
+    width: calc(100% - 22px); /* Adjust width */
+    max-width: 250px; /* Limit max width */
+    box-sizing: border-box;
+}
+
+/* Error Message Style */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Loading/Sending Message Style */
+#loading-msg, #sending-msg {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Hide helper elements initially */
+.hidden {
+    display: none;
+}

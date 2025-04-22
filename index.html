@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบทดสอบธาตุประจำตัว - เพลินไพร</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <header>
+            <img src="logo.png" alt="โลโก้ เพลินไพร" class="logo">
+            <h1>แบบทดสอบธาตุประจำตัว</h1>
+            <p>โดย เพลินไพร</p>
+        </header>
+
+        <form id="quiz-form">
+            <div id="questions-container">
+                </div>
+            <p id="loading-msg" class="hidden">กำลังโหลดคำถาม...</p>
+            <button type="submit" id="submit-btn">แสดงผลการทดสอบ</button>
+        </form>
+
+        <div id="result-container" class="hidden">
+            <h2>ผลการทดสอบธาตุประจำตัวของคุณ</h2>
+            <div class="chart-container">
+                <canvas id="result-chart"></canvas>
+            </div>
+            <div id="score-percentage">
+                <p>ธาตุลม: <span id="wind-percent">0</span>%</p>
+                <p>ธาตุไฟ: <span id="fire-percent">0</span>%</p>
+                <p>ธาตุน้ำ: <span id="water-percent">0</span>%</p>
+            </div>
+            <h3>ธาตุประจำตัวของคุณคือ: <span id="dominant-element"></span></h3>
+
+            <div id="recommendation">
+                <h4>คำแนะนำสำหรับธาตุของคุณ:</h4>
+                <img id="element-image" src="" alt="รูปภาพธาตุประจำตัว">
+                <p id="element-advice"></p>
+            </div>
+
+            <div id="feedback-section">
+                <h4>การประเมินธาตุประจำตัวและคำแนะนำที่ได้ ตรงกับตัวท่านมากน้อยเพียงใด?</h4>
+                <p>(น้อยที่สุด 1 - 5 มากที่สุด)</p>
+                <div class="feedback-options">
+                    </div>
+                 <p id="sending-msg" class="hidden">กำลังส่งข้อมูล...</p>
+            </div>
+
+            <div id="consultation">
+                <p>ปรึกษาเพิ่มเติมกับทีมหมอเพลินไพร</p>
+                <a href="https://lin.ee/5b9wy1w" target="_blank" class="line-button">
+                    คลิกที่นี่เพื่อปรึกษาผ่าน LINE
+                </a>
+            </div>
+
+            <button type="button" id="restart-btn" class="hidden">ทำแบบทดสอบอีกครั้ง</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
